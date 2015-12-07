@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'Core/Controller.Vista.php';
 $vi = new Vista();
 if ($_POST) {
