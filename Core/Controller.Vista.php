@@ -3,6 +3,7 @@
 include 'class.ddbb.php';
 include 'Controller.Usuarios.php';
 include 'class.utiles.php';
+include 'Controller.Libros.php';
 
 class Vista{
 	
@@ -23,7 +24,7 @@ class Vista{
 
 			$_SESSION['Usuario'] = $Usuario;
 			
-			header("location: AgregaLibro.php");
+			header("location: Libros.php");
 		}else{
 			header("location: login.php?error=Error de login");
 		}
@@ -34,6 +35,40 @@ class Vista{
 		if (!$usu->ValidaAcceso($Usuario, $NombreVista)) {
 			header("location:".$Redirige);
 		}
+	}
+
+	public function BuscaLibros($Buscar, $EstadoLibro){
+		$li = new Libros();
+		$datos = $li->BuscaLibros($Buscar, $EstadoLibro);
+		$html = "<br><br><table border=1>";
+		$html .= "<tr><td>ISBN</td><td>Nombre</td><td>Autor</td><td>Clasificacion</td><td>Paginas</td><td>Editorial</td><td>Fecha Publicación</td></tr>";
+		foreach ($datos as $campo) {
+			$html .= "<tr>";
+			$html .= "<td>";
+			$html .= $campo['ISBN'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['Nombre'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['Autor'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['Clasificacion'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['Paginas'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['Editorial'];
+			$html .= "</td>";
+			$html .= "<td>";
+			$html .= $campo['FechaPublicacion'];
+			$html .= "</td>";
+			$html .= "</tr>";
+		}
+		$html .= "</tabla>";
+		return $html;
 	}
 
 	
