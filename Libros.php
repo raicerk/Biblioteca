@@ -2,7 +2,7 @@
 	session_start();
 	include 'Core/Controller.Vista.php';
 	$vista = new Vista();
-	$vista->ValidaAcceso($_SESSION['Usuario'], "Libros.php", "login.php?error=Error de permiso a las busquedas");
+	$vista->ValidaAcceso($_SESSION['Usuario'], $vista->ObtienePagina(), "login.php?error=Error de permiso a las busquedas");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,10 @@
 		<a href="AgregaLibro.php"><input type="button" value="Agregar nuevo libro"></a>
 	</form>
 	<?php
-		echo $vista->BuscaLibros($_GET['txtBuscador'], $_GET['cbEstado']);
+		if (isset($_GET['txtBuscador']) && isset($_GET['cbEstado'])) {
+			echo $vista->BuscaLibros($_GET['txtBuscador'], $_GET['cbEstado']);
+		}
+		
 	?>
 </body>
 </html>
