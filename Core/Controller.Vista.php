@@ -71,6 +71,10 @@ class Vista{
 		return $html;
 	}
 
+	public function ObtienePagina(){
+		$utiles = new Utiles();
+		return $utiles->ObtienePagina();
+	}
 	
 
 }
