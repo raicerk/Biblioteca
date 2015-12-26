@@ -2,7 +2,7 @@
 	session_start();
 	include 'Core/Controller.Vista.php';
 	$vista = new Vista();
-	$vista->ValidaAcceso($_SESSION['Usuario'], "AgregaLibro.php", "login.php?error=Error de permiso");
+	$vista->ValidaAcceso($_SESSION['Usuario'], $vista->ObtienePagina(), "login.php?error=Error de permiso");
 ?>
 <!DOCTYPE html>
 <html>
