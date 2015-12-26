@@ -4,10 +4,15 @@ session_start();
 
 include 'Core/Controller.Vista.php';
 $vi = new Vista();
+
 if ($_POST) {
 	$vi->ValidaLogin($_POST['txtUsuario'], $_POST['txtContrasena']);
+}else{
+	foreach ($_SESSION as $key=>$value) {
+		unset($_SESSION[$key]);
+	}
+	session_destroy();
 }
-
 
 ?>
 
