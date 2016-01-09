@@ -11,7 +11,7 @@
 </head>
 <body>
 	<a href="Libros.php"><input type="button" value="Lista libros"></a><br><br>
-	<form action="./Core/Controller.php?option=1" method="POST">
+	<form action="./Core/Controller.Ajax.php?option=1" method="POST">
 		ISBN : <input type="text" name="txtISBN" value=""><br>
 		Nombre : <input type="text" name="txtNombre" value=""><br>
 		Autor : <input type="text" name="txtAutor" value=""><br>
