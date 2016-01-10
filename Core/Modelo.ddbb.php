@@ -16,8 +16,8 @@ class DDBB
 
 		$parametros = array();
 
-		$NombreServidor = "DESKTOP-L0LTPUU\SQLEXPRESS"; #NombreInstancia
-		$InfoConexion = array("UID"=>'sa',"PWD"=>'R042581796r',"Database"=>$this->NombreBaseDatos);
+		$NombreServidor = constant("sqlHost");
+		$InfoConexion = array("UID"=>constant("sqlUsuario"),"PWD"=>constant("sqlContrasena"),"Database"=>$this->NombreBaseDatos);
 		$conn = sqlsrv_connect($NombreServidor, $InfoConexion);
 
 		if (is_array($arrayValores)) {
