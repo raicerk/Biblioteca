@@ -1,7 +1,6 @@
 <?php
 
-include 'class.ddbb.php';
-include 'class.sana.php';
+include_once 'Init.php';
 
 switch ($_GET['option']) {
 	case '1':

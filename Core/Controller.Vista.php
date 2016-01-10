@@ -1,8 +1,8 @@
 <?php
 
-include 'class.ddbb.php';
+include_once 'Init.php';
+
 include 'Controller.Usuarios.php';
-include 'class.utiles.php';
 include 'Controller.Libros.php';
 
 class Vista{
