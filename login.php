@@ -25,7 +25,7 @@ if ($_POST) {
 
 	<form action="login.php" method="POST">
 		Usuario : <input type="text" name="txtUsuario" value=""><br>
-		Contrasena : <input type="text" name="txtContrasena" value=""><br>
+		Contrasena : <input type="password" name="txtContrasena" value=""><br>
 		<input type="submit" value="Ingresar">
 		<script type="text/javascript"> <?php if (isset($_GET['error'])) {echo "alert('".$_GET['error']."');";};?></script>
 	</form>
